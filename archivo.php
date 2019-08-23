@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+ session_start();
+      include("src/libs/vars.php");
+      include("src/libs/sessionControl/conection.php");
+ ?>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -10,17 +14,8 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <!-- CONEXION AL SERVIDOR -->
-
-        <?php
-      $servidor="localhost";
-      $usuario="root";
-      $clave="";
-      $base="repositorio";
-
-    $conexion=mysqli_connect("$servidor","$usuario","$clave")or die ("Error al conectar");
-    mysqli_select_db($conexion,"$base");
-
+         
+<?php 
 
     $conexion->set_charset("utf8");
     

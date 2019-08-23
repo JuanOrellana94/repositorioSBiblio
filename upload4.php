@@ -1,3 +1,8 @@
+<?php 
+ session_start();
+      include("src/libs/vars.php");
+      include("src/libs/sessionControl/conection.php");
+ ?>
 <?php
 
 $fileName = $_FILES["file1"]["name"]; // The file name
@@ -20,15 +25,7 @@ if (!$fileTmpLoc) { // if file not chosen
 }
 if(move_uploaded_file($fileTmpLoc, "upload/$fileName")){
 
-  // conexion a la base de datos
-
-  $servidor="localhost";
-  $usuario="bibliocnx";
-  $clave="Biblioteca123$";
-  $base="addrepositorio";
-
-    $conexion=mysqli_connect("$servidor","$usuario","$clave")or die ("Error al conectar");
-    mysqli_select_db($conexion,"$base");
+ 
        
     $checkValidation="SELECT * FROM tbl_documentos WHERE titulo='$titulo' ;";
 

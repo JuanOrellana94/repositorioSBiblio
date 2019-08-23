@@ -1,8 +1,4 @@
-configurar la conexion al servidor en:
-
-src/libs/vars
-archivo.php
-upload4.php
+// verificar las variables de conexion
 
 usuario: repositorio
 pass: repo123

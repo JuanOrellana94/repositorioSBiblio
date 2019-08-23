@@ -22,22 +22,62 @@
            <?php
              
             
-           $filas_resultado=mysqli_query($conexion,"SELECT count(id_documento) from tbl_documentos where titulo like '%$textBusqueda%'");
+           $filas_resultado=mysqli_query($conexion,"SELECT count(id_documento) from tbl_documentos where titulo like '%$textBusqueda%' OR tagdocumento LIKE '%$textBusqueda%'
+
+            ");
+        
            $filas = mysqli_fetch_row($filas_resultado);  
            $todal_filas = $filas[0];  
            $total_paginas = ceil($todal_filas / $limite); 
             ?>
-                <nav aria-label="Page navigation">
-                        <ul class='pagination justify-content-center"' id="pagination">
-                        <?php if(!empty($total_paginas)):for($i=1; $i<=$total_paginas; $i++):  
-                            if($i == $pagina):?>
-                                    <li class='page-item active'  id="<?php echo $i;?>"><a class="page-link" href='pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li> 
-                            <?php else:?>
-                            <li class='page-item'id="<?php echo $i;?>"><a class="page-link" href='pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
-                            <?php endif;?>    
-                        <?php endfor;endif;?>
-                           </ul>
-                      </nav>    
+                           <nav aria-label="Page navigation">
+          <ul class='pagination justify-content-center' id="pagination">
+                      <?php
+
+                      $printEnd=0;
+                      $rangoLeash='4';//TEMP                    
+                      if ($pagina<=$rangoLeash+2) {
+                        $rangoInferior='1';
+                      }else{
+                        $rangoInferior= $pagina-$rangoLeash;
+                        ?>
+                          <li class='page-item'  id="1"> <a class="page-link" href='pagination.php?page=1'> 1 </a> </li>
+                          <li class='page-item'  > <a class="page-link"> ... </a> </li>    
+                        <?php
+                      }
+
+                      if ($pagina>=($total_paginas-$rangoLeash)){
+                        $rangoSuperior=$total_paginas;
+                      }else{
+                        $rangoSuperior= $pagina+$rangoLeash;
+                        $printEnd=1;
+
+                      }  
+
+
+
+                        if(!empty($total_paginas)){
+                          for($i=$rangoInferior; $i<=$rangoSuperior; $i++){ 
+                  if($i == $pagina){ ?>
+                    <li class='page-item active'  id="<?php echo $i;?>"> <a class="page-link" href='pagination.php?page=<?php echo $i;?>'>
+                      <?php echo $i;?></a>
+                    </li> 
+                          
+                              <?php } else {?>
+                              <li class='page-item'id="<?php echo $i;?>"><a class="page-link" href='pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
+                            <?php }?>    
+                        <?php }
+                    }//Here
+
+                    if ($printEnd==1) {                 
+                    ?>
+              <li class='page-item'  > <a class="page-link"> ... </a> </li>
+              <li class='page-item'  id="<?php echo $total_paginas;?>"> <a class="page-link" href='pagination.php?page=1'> <?php echo $total_paginas;?> </a> </li>      
+                 <?php
+                    }
+                    ?>
+                      </ul>
+         </nav>   
 
  <script>
 
@@ -58,27 +98,28 @@
       });
 </script>
 
-    <?php      
-            $selTable=mysqli_query($conexion,"SELECT * from tbl_documentos where titulo like '%$textBusqueda%'               
-                ORDER BY id_documento
-                LIMIT $inicia_desde, $limite;");
-            if (mysqli_num_rows($selTable)==0){
-             echo "<div id='respuesta' style='color: red; font-weight: bold; text-align: center;'>  
-               La busqueda no devolvió ningún resultado </div>";
-            } else {
 
+    <?php      
+            $selTable=mysqli_query($conexion,"SELECT * from tbl_documentos where titulo like '%$textBusqueda%' OR tagdocumento LIKE '%$textBusqueda%'
+                ORDER BY id_documento
+                LIMIT $inicia_desde, $limite;");          
+           if (mysqli_num_rows($selTable)==0){
+               echo "<div id='respuesta' style='color: red; font-weight: bold; text-align: center;'>  
+                 La busqueda no devolvió ningún resultado </div>";
+              } else{
             $orden=1;           
             while ($dataLibros=mysqli_fetch_assoc($selTable)){?>
            <?php if ($orden==1){ ?>               
-          
+          <table class="table table-hover table-responsive">
             <tr>
-             <td>
+                   <td>
               <div style="width:500px; padding:0px;" align="right"><?php echo "<img src='$dataLibros[doc_portada]' width='150' height='200'>" ?>
                   
                <div style="width:245px;  float:right;" align="left"> 
-                &nbsp;&nbsp;Titulo:&nbsp;&nbsp;<?php echo $dataLibros['titulo']; ?> <br>             
-                &nbsp;&nbsp;Peso:&nbsp;&nbsp;<?php echo $dataLibros['tamanio']; ?>  <br>             
-                &nbsp;&nbsp;Detalles:&nbsp;&nbsp;<div class="btn-group" role="group" aria-label="Opciones">
+                 <strong>Titulo:</strong><?php echo $dataLibros['titulo']; ?> <br>             
+                <strong>Peso:</strong><?php echo $dataLibros['tamanio']; ?>  <br>     
+                <strong>Criterios:</strong><?php echo $dataLibros['tagdocumento']; ?>  <br>        
+                <strong>Detalles:</strong><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerDetalles" 
                                  data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
@@ -88,19 +129,20 @@
                             
                                  
                                 </div><br>
-                  &nbsp;&nbsp;Opciones:<div class="btn-group" role="group" aria-label="Opciones">
+                <strong>Opciones:</strong><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
                                  title="Mostrar Documento">
                                     <img  src="img/icons/verEjemplar.png" width="35" height="30">
-                                </button>
-                            
-                                 
+                                </button> 
                                 </div>
-                          <br>
+
+                                <br>
 
                           <?php if (isset($_SESSION[ "Logeado" ])): ?>
+                            
+                          
                             
                           
 
@@ -138,9 +180,10 @@
               <div style="width:500px; padding:0px;" align="right"><?php echo "<img src='$dataLibros[doc_portada]' width='150' height='200'>" ?>
                   
                <div style="width:245px;  float:right;" align="left"> 
-                &nbsp;&nbsp;Titulo:&nbsp;&nbsp;<?php echo $dataLibros['titulo']; ?> <br>             
-                &nbsp;&nbsp;Peso:&nbsp;&nbsp;<?php echo $dataLibros['tamanio']; ?>  <br>             
-                &nbsp;&nbsp;Detalles:&nbsp;&nbsp;<div class="btn-group" role="group" aria-label="Opciones">
+                 <strong>Titulo:</strong><?php echo $dataLibros['titulo']; ?> <br>             
+                <strong>Peso:</strong><?php echo $dataLibros['tamanio']; ?>  <br>     
+                <strong>Criterios:</strong><?php echo $dataLibros['tagdocumento']; ?>  <br>        
+                <strong>Detalles:</strong><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerDetalles" 
                                  data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
@@ -150,7 +193,7 @@
                             
                                  
                                 </div><br>
-                &nbsp;&nbsp;Opciones:<div class="btn-group" role="group" aria-label="Opciones">
+                <strong>Opciones:</strong><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
@@ -190,14 +233,15 @@
              </td> 
            <?php $orden=3;   }elseif ($orden==3) {
            ?>
-             <td>
+                  <td>
               <div style="width:500px; padding:0px;" align="right"><?php echo "<img src='$dataLibros[doc_portada]' width='150' height='200'>" ?>
                   
-                <div style="width:245px;  float:right;" align="left"> 
-                &nbsp;&nbsp;Titulo:&nbsp;&nbsp;<?php echo $dataLibros['titulo']; ?> <br>             
-                &nbsp;&nbsp;Peso:&nbsp;&nbsp;<?php echo $dataLibros['tamanio']; ?>  <br>             
-                &nbsp;&nbsp;Detalles:&nbsp;&nbsp;<div class="btn-group" role="group" aria-label="Opciones">
-                               <button type="button" class="btn btn-light" data-toggle="modal"
+               <div style="width:245px;  float:right;" align="left"> 
+                 <strong>Titulo:</strong><?php echo $dataLibros['titulo']; ?> <br>             
+                <strong>Peso:</strong><?php echo $dataLibros['tamanio']; ?>  <br>     
+                <strong>Criterios:</strong><?php echo $dataLibros['tagdocumento']; ?>  <br>        
+                <strong>Detalles:</strong><div class="btn-group" role="group" aria-label="Opciones">
+                                <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerDetalles" 
                                  data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
                                  title="Mostrar Documento">
@@ -206,20 +250,20 @@
                             
                                  
                                 </div><br>
-                &nbsp;&nbsp;Opciones:<div class="btn-group" role="group" aria-label="Opciones">
+                <strong>Opciones:</strong><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
                                  title="Mostrar Documento">
                                     <img  src="img/icons/verEjemplar.png" width="35" height="30">
-                                </button>
-                            
-                                 
+                                </button> 
                                 </div>
 
                                 <br>
 
                           <?php if (isset($_SESSION[ "Logeado" ])): ?>
+                            
+                          
                             
                           
 
@@ -251,7 +295,9 @@
           <?php $orden=1; } ?>      
           <?php  } ?>
             
-        </table>
-
-      <?php } ?>
+        </table>      
+    
+   <?php } ?>
+           
+     ?>
 </body>

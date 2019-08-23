@@ -162,10 +162,10 @@ progress[value] {
                          <form id="upload_form" enctype="multipart/form-data" method="post"> 
                            <div>
                             <label  for="TituloLabel">Titulo del documento</label></div>
-                           <div> <input  type="text" class="form-control" name="formdocutit" id="formdocutit"  placeholder="" ></div><br>
+                           <div> <input  type="text" maxlength="56" class="form-control" name="formdocutit" id="formdocutit"  placeholder="" ></div><br>
                             
                                 <div><label for="TituloLabel">Criterios de Busqueda (Usa Tab entre cada criterio)</label></div>
-                                <div><input  type="text"   class="block-tab" name="formdocutag" id="formdocutag"  placeholder="" ></div>                   
+                                <div><input  type="text"   class="block-tab" name="formdocutag" id="formdocutag" maxlength="23" placeholder="" ></div>                   
                         
                             <br>
                              <div><label for="TituloLabel">Ingrese una descripcion del documento</label></div>
@@ -563,9 +563,9 @@ function recargarTabla(){
   $("#cargandoFeedback").show();
   $("#cargandoFeedback").html(' <img src="img/structures/replace.gif" style="max-width: 60%; margin-top:-10%; margin-left:-30%">').show(200);
 
-  var busqueda=$("#textBusqueda").val();
- 
+  var busqueda=$("#textBusqueda").val(); 
   busqueda=busqueda.trim().replace(/ /g, '%20');
+
   $("#cargarTabla").load("verArchivos.php?pagina=1&busqueda="+busqueda);
   
   setTimeout( function() {
@@ -581,7 +581,7 @@ function recargarTablaLimpiar(){
       $("#cargandoFeedback").html(' <img src="img/structures/replace.gif" style="max-width: 60%; margin-top:-10%; margin-left:-30%">').show(200);
 
   var busqueda=$("#textBusqueda").val();
-  busqueda=busqueda.trim().replace(/ /g, '%20');
+
   var ordenar=$("#textBusquedaordenar").val();  
  $("#cargarTabla").load("verArchivos.php?pagina=1&&busqueda="+busqueda);
     setTimeout( function() {
