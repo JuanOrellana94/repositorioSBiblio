@@ -66,7 +66,7 @@ progress[value] {
     <div class="row" style="margin-left: 1%; margin-right: 1%;">
       <div class="col-lg-10">
         <nav class="navbar navbar-expand-md" style="background-color:#4A0A0A;" >
-          <a href="../sistemaBibliotecaJOB/menuopt.php">
+          <a href="../sistemabiblioteca/menuopt.php">
           <div>
             <img src="img/icons/LogoSys.png" width="100" height="100" alt="" >
           </div>
