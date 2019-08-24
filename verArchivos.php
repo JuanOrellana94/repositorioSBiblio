@@ -18,7 +18,7 @@
 
 <body>
     
-        <table class="table table-bordered table-hover"  style="background-color: #FFFFFF;">          
+       
            <?php
              
             
@@ -98,7 +98,7 @@
       });
 </script>
 
-
+     <table class="table table-hover table-responsive">
     <?php      
             $selTable=mysqli_query($conexion,"SELECT * from tbl_documentos where titulo like '%$textBusqueda%' OR tagdocumento LIKE '%$textBusqueda%'
                 ORDER BY id_documento
@@ -107,10 +107,11 @@
                echo "<div id='respuesta' style='color: red; font-weight: bold; text-align: center;'>  
                  La busqueda no devolvió ningún resultado </div>";
               } else{
-            $orden=1;           
+            $orden=1;  
+
             while ($dataLibros=mysqli_fetch_assoc($selTable)){?>
            <?php if ($orden==1){ ?>               
-          <table class="table table-hover table-responsive">
+        
             <tr>
                    <td>
               <div style="width:500px; padding:0px;" align="right"><?php echo "<img src='$dataLibros[doc_portada]' width='150' height='200'>" ?>

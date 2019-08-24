@@ -21,7 +21,7 @@ function rediConsulta(){
 }
 
 function rediMenuOPT(){
-	window.location = "inicio.php";
+	window.location = "../../sistemaBibliotecaJOB/menuopt.php";
 
 }
 
