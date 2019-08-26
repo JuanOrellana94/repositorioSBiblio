@@ -3,8 +3,8 @@
 
 
   $servidor="localhost";
-  $usuario="bibliorepo";
-  $clave="repoBiblioteca123$";
+  $usuario="bibliocnx";
+  $clave="Biblioteca123$";
   $base="addrepositorio";
   
   
