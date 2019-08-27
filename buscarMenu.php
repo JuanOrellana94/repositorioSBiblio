@@ -61,11 +61,11 @@ progress[value] {
   }
 
    ?>  
-<body style="background-color:#4A0A0A;">
+<body style="background-color:#069206;">
   
     <div class="row" style="margin-left: 1%; margin-right: 1%;">
       <div class="col-lg-10">
-        <nav class="navbar navbar-expand-md" style="background-color:#4A0A0A;" >
+        <nav class="navbar navbar-expand-md" style="background-color:#069206;" >
           <a href="../sistemabiblioteca/menuopt.php">
           <div>
             <img src="img/icons/LogoSys.png" width="100" height="100" alt="" >
@@ -297,7 +297,7 @@ progress[value] {
 <div class="modal fade" id="modalVerDetalles" tabindex="-1" role="dialog" aria-labelledby="modalVerDetalles" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #4A0A0A;">
+      <div class="modal-header" style="background: #069206;">
         <h5 class="modal-title" id="newEditorialModal"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Descripcion del PDF </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -340,7 +340,7 @@ progress[value] {
 <div class="modal fade" id="modalVerPdf" tabindex="-1" role="dialog" aria-labelledby="modalVerPdf" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #4A0A0A;">
+      <div class="modal-header" style="background: #069206;">
         <h5 class="modal-title" id="newmodalVerPdf"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Leer PDF </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
