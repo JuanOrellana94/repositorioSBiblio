@@ -501,7 +501,7 @@ function uploadFile(){
 
   $("#file1").val('');
   document.getElementById("formdocutit").value='';
- $('#formdocutag').tagsInput().value="";
+  $('#formdocutag').importTags(''); 
   document.getElementById("formdocudes").value='';
 
   
