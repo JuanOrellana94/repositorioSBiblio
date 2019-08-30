@@ -61,11 +61,11 @@ progress[value] {
   }
 
    ?>  
-<body style="background-color:#0e2e0e;">
+<body style="background-color:#2980b9;">
   
     <div class="row" style="margin-left: 1%; margin-right: 1%;">
       <div class="col-lg-10">
-        <nav class="navbar navbar-expand-md" style="background-color:#0e2e0e ;" >
+        <nav class="navbar navbar-expand-md" style="background-color:#2980b9 ;" >
           <a href="../sistemabiblioteca/menuopt.php">
           <div>
             <img src="img/icons/LogoSys.png" width="100" height="100" alt="" >
@@ -143,7 +143,7 @@ progress[value] {
 <div class="modal fade" id="modalsubirpdf" tabindex="-1" role="dialog" aria-labelledby="modalsubirpdf" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #0e2e0e ;"> 
+      <div class="modal-header" style="background: #2980b9 ;"> 
          <h5 class="modal-title" id="newEditorialModal"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Subir PDF</a></h5>
        
       </div>
@@ -287,7 +287,7 @@ progress[value] {
 <div class="modal fade" id="modalVerDetalles" tabindex="-1" role="dialog" aria-labelledby="modalVerDetalles" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #0e2e0e ;">
+      <div class="modal-header" style="background: #2980b9 ;">
         <h5 class="modal-title" id="newEditorialModal"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Descripcion del PDF </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -331,7 +331,7 @@ progress[value] {
   data-keyboard="false" id="modalVerPdf" tabindex="-1" role="dialog" aria-labelledby="modalVerPdf" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #0e2e0e ;">
+      <div class="modal-header" style="background: #2980b9 ;">
         <h5 class="modal-title" id="newmodalVerPdf"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Leer PDF </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -370,7 +370,7 @@ progress[value] {
 <div class="modal fade" id="fotografiaModal" tabindex="-1" role="dialog" aria-labelledby="fotografiaModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #0e2e0e ;">
+      <div class="modal-header" style="background: #2980b9 ;">
         <h5 class="modal-title" id="newEditorialModalTittle"><img src="img/icons/BookCover.png" width="30" height="30"><a style="color:white;"> Agregar una portada </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -418,7 +418,7 @@ progress[value] {
 <div class="modal fade" id="modalEliminarpdf" tabindex="-1" role="dialog" aria-labelledby="modalEliminarpdf" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #0e2e0e ;">
+      <div class="modal-header" style="background: #2980b9 ;">
         <h5 class="modal-title" id="newEditorialModalTittle"><img src="img/icons/BookEditWideDel.png" width="35" height="30"><a style="color:white;"> Eliminar </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
