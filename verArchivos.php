@@ -180,8 +180,8 @@ body {
                 <?php echo "<img src='$dataLibros[doc_portada]' width='250' height='300'>" ?> 
                  </div>
                   <div class="flip-card-back">
-                     <h1>Descripcion</h1> 
-                     <p><?php echo $dataLibros['descripcion'];?> </p>
+                     <h1>Descripción</h1> 
+                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
 
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
@@ -249,8 +249,8 @@ body {
                 <?php echo "<img src='$dataLibros[doc_portada]' width='250' height='300'>" ?> 
                  </div>
                   <div class="flip-card-back">
-                     <h1>Descripcion</h1> 
-                     <p><?php echo $dataLibros['descripcion'];?> </p>
+                     <h1>Descripción</h1> 
+                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
 
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
@@ -309,8 +309,8 @@ body {
                 <?php echo "<img src='$dataLibros[doc_portada]' width='250' height='300'>" ?> 
                  </div>
                   <div class="flip-card-back">
-                     <h1>Descripcion</h1> 
-                     <p><?php echo $dataLibros['descripcion'];?> </p>
+                     <h1>Descripción</h1> 
+                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
 
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
@@ -370,8 +370,8 @@ body {
                 <?php echo "<img src='$dataLibros[doc_portada]' width='250' height='300'>" ?> 
                  </div>
                   <div class="flip-card-back">
-                     <h1>Descripcion del Documento</h1> 
-                     <p><?php echo $dataLibros['descripcion'];?> </p>
+                     <h1>Descripción</h1> 
+                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
                    
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
