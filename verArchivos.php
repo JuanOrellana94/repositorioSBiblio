@@ -2,7 +2,7 @@
   session_start();
       include("src/libs/vars.php");
       include("src/libs/sessionControl/conection.php");
- $limite = 10;
+ $limite = 9;
   if (isset($_GET["pagina"])) { 
     $pagina  = $_GET["pagina"]; 
   } else {
@@ -119,24 +119,27 @@
                <div style="width:245px;  float:right;" align="left"> 
                  <strong>Titulo:</strong><?php echo $dataLibros['titulo']; ?> <br>             
                 <strong>Peso:</strong><?php echo $dataLibros['tamanio']; ?>  <br>     
-                <strong>Criterios:</strong><?php echo $dataLibros['tagdocumento']; ?>  <br>        
-                <strong>Detalles:</strong><div class="btn-group" role="group" aria-label="Opciones">
-                                <button type="button" class="btn btn-light" data-toggle="modal"
-                                 data-target="#modalVerDetalles" 
-                                 data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
-                                 title="Mostrar Documento">
-                                    <img  src="img/icons/pregunta.png" width="35" height="30">
-                                </button>
-                            
-                                 
-                                </div><br>
-                <strong>Opciones:</strong><div class="btn-group" role="group" aria-label="Opciones">
+                <strong>Criterios:</strong><?php echo $dataLibros['tagdocumento']; ?>  <br>       
+            
+                <strong>Opciones:</strong><br><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
                                  title="Mostrar Documento">
-                                    <img  src="img/icons/verEjemplar.png" width="35" height="30">
+                                    <img  src="img/icons/instruccion.png" width="20" height="20"><p>Leer</p>
                                 </button> 
+
+                                </div>
+
+                                 <div class="btn-group" role="group" aria-label="Opciones">
+                                <button type="button" class="btn btn-light" data-toggle="modal"
+                                 data-target="#modalVerDetalles" 
+                                 data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
+                                 title="Mostrar Documento">
+                                    <img  src="img/icons/pregunta.png" width="20" height="20"><p>Ver detalles</p>
+                                </button>
+                            
+                                 
                                 </div>
 
                                 <br>
@@ -148,7 +151,7 @@
                           
 
                          <div style='color: green; font-weight: bold; text-align: center;'>OPCION DE ADMINISTRADOR</div><br>
-                          <div class="btn-group" role="group" aria-label="Opciones">
+                        <div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalEliminarpdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"
@@ -184,26 +187,29 @@
                  <strong>Titulo:</strong><?php echo $dataLibros['titulo']; ?> <br>             
                 <strong>Peso:</strong><?php echo $dataLibros['tamanio']; ?>  <br>     
                 <strong>Criterios:</strong><?php echo $dataLibros['tagdocumento']; ?>  <br>        
-                <strong>Detalles:</strong><div class="btn-group" role="group" aria-label="Opciones">
-                                <button type="button" class="btn btn-light" data-toggle="modal"
-                                 data-target="#modalVerDetalles" 
-                                 data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
-                                 title="Mostrar Documento">
-                                    <img  src="img/icons/pregunta.png" width="35" height="30">
-                                </button>
-                            
-                                 
-                                </div><br>
-                <strong>Opciones:</strong><div class="btn-group" role="group" aria-label="Opciones">
+               
+              
+                <strong>Opciones:</strong><br><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
                                  title="Mostrar Documento">
-                                    <img  src="img/icons/verEjemplar.png" width="35" height="30">
+                                    <img  src="img/icons/instruccion.png" width="20" height="20"><p>Leer</p>
                                 </button> 
+
                                 </div>
 
-                                <br>
+                                 <div class="btn-group" role="group" aria-label="Opciones">
+                                <button type="button" class="btn btn-light" data-toggle="modal"
+                                 data-target="#modalVerDetalles" 
+                                 data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
+                                 title="Mostrar Documento">
+                                    <img  src="img/icons/pregunta.png" width="20" height="20"><p>Ver detalles</p>
+                                </button>
+                            
+                                 
+                                </div>
+
 
                           <?php if (isset($_SESSION[ "Logeado" ])): ?>
                             
@@ -241,26 +247,29 @@
                  <strong>Titulo:</strong><?php echo $dataLibros['titulo']; ?> <br>             
                 <strong>Peso:</strong><?php echo $dataLibros['tamanio']; ?>  <br>     
                 <strong>Criterios:</strong><?php echo $dataLibros['tagdocumento']; ?>  <br>        
-                <strong>Detalles:</strong><div class="btn-group" role="group" aria-label="Opciones">
-                                <button type="button" class="btn btn-light" data-toggle="modal"
-                                 data-target="#modalVerDetalles" 
-                                 data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
-                                 title="Mostrar Documento">
-                                    <img  src="img/icons/pregunta.png" width="35" height="30">
-                                </button>
-                            
-                                 
-                                </div><br>
-                <strong>Opciones:</strong><div class="btn-group" role="group" aria-label="Opciones">
+               
+                
+                <strong>Opciones:</strong><br><div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
                                  title="Mostrar Documento">
-                                    <img  src="img/icons/verEjemplar.png" width="35" height="30">
+                                    <img  src="img/icons/instruccion.png" width="20" height="20"><p>Leer</p>
                                 </button> 
+
                                 </div>
 
-                                <br>
+                                 <div class="btn-group" role="group" aria-label="Opciones">
+                                <button type="button" class="btn btn-light" data-toggle="modal"
+                                 data-target="#modalVerDetalles" 
+                                 data-varformdocumentodes="<?php echo $dataLibros['descripcion'];?>"                                 
+                                 title="Mostrar Documento">
+                                    <img  src="img/icons/pregunta.png" width="20" height="20"><p>Ver detalles</p>
+                                </button>
+                            
+                                 
+                                </div>
+
 
                           <?php if (isset($_SESSION[ "Logeado" ])): ?>
                             

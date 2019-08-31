@@ -61,11 +61,11 @@ progress[value] {
   }
 
    ?>  
-<body style="background-color:#069206;">
+<body style="background-color:#0e2e0e;">
   
     <div class="row" style="margin-left: 1%; margin-right: 1%;">
       <div class="col-lg-10">
-        <nav class="navbar navbar-expand-md" style="background-color:#069206;" >
+        <nav class="navbar navbar-expand-md" style="background-color:#0e2e0e ;" >
           <a href="../sistemabiblioteca/menuopt.php">
           <div>
             <img src="img/icons/LogoSys.png" width="100" height="100" alt="" >
@@ -124,41 +124,38 @@ progress[value] {
     <?php
      
      ?>
-  
+ 
 <?php if (isset($_SESSION[ "existe" ])) {
   # code...
- ?>      
+ ?>    
 
-   <!--DIRECCION DE LA UBICACION ACTUAL-->     
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="">Menu de administrador: subir archivos</a></li>   
-    </ol>
-  </nav>   
+ <div style="width:500px; padding:3px;">
 
-<!--DIRECCION DE LA UBICACION ACTUAL-->     
-     
+<h5>Usted esta autorizado para publicar documentos: </h5><div style="width:245px; float:left;"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalsubirpdf">
+ Publicar nuevo PDF
+  </button></div>
+<div style="width:245px; height: 30px;  float:right;" id="subirpdfalert"></div>
 
-<!--INICIO CONTENEDOR DE CATALOGO DE  CODIGO DE BARRA LIBROS-->    
-<div class="container-fluid" > 
-    <div class="col-sm-12">  
-      <div class="card">   
-        <div class="card-header">
-          <div class="row mx-auto">
-            <div style="vertical-align: middle; margin: 5px">
-               <p class="font-weight-light"> <h3> Publicar un nuevo documento</h3>  Seleccione el archivo PDF en su equipo mediante el boton Elegir archivos: <br>Posteriormente  realice click en Subir archivos, le mostrara una alerta de confirmacion de la publicacion.                      
-            </div>           
-          </div>     
-        </div>
-        <!--Cuerpo del panel-->         
-        <div class="card-body">              
-          <div class="row">            
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-5">                     
-                        <div align="center" class="input-group"> 
+</div>
+
+
+
+<div class="modal fade" id="modalsubirpdf" tabindex="-1" role="dialog" aria-labelledby="modalsubirpdf" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #0e2e0e ;"> 
+         <h5 class="modal-title" id="newEditorialModal"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Subir PDF</a></h5>
+       
+      </div>
+      <div class="modal-body">
+       <table class="table table-responsive">
+  <tr>
+   <td> <p class="font-weight-light"> <h3> Publicar un nuevo documento</h3>  Seleccione el archivo PDF en su equipo mediante el boton Elegir archivos: <br>Posteriormente  realice click en Subir archivos, le mostrara una alerta de confirmacion de la publicacion. </td>
+  </tr>
+  
+</table>
+                                   
+
                          <form id="upload_form" enctype="multipart/form-data" method="post"> 
                            <div>
                             <label  for="TituloLabel">Titulo del documento</label></div>
@@ -169,7 +166,7 @@ progress[value] {
                         
                             <br>
                              <div><label for="TituloLabel">Ingrese una descripcion del documento</label></div>
-                                <div><textarea  type="text" class="form-control " maxlength="380" rows="10" cols="30" name="formdocudes" id="formdocudes"  placeholder="" ></textarea></div>
+                                <div><textarea  type="text" class="form-control " maxlength="380" rows="2" cols="3" name="formdocudes" id="formdocudes"  placeholder="" ></textarea></div>
 
                         
                             <br>
@@ -186,21 +183,16 @@ progress[value] {
                          <h3 id="estado"></h3>
                           <p id="peso_cargado"></p>                  
                          
-                       </form>                   
-                          </div> 
-                        </div>                                      
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>  
-        </div>
-         <!--Fin delcuerpo del panel-->
-    
+                       </form>    
       </div>
-       <!--Fin Panel/card para el catalogo de libros-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="recargarTabla()" data-dismiss="modal" >Cerrar</button>        
+      </div>
     </div>
+  </div>
 </div>
+             
+
 
 
   
@@ -273,9 +265,7 @@ progress[value] {
                 </button>
                 <button class="btn btn-light float-right" type="button" onclick="rediMenuOPT();" data-toggle="tooltip" data-placement="top" title="Volver al menu principal">
                   <img src="img/icons/menuRegresar.png" width="60" height="60">
-                </button>
-
-               
+                </button>               
                 
               </div>
             </div>
@@ -297,7 +287,7 @@ progress[value] {
 <div class="modal fade" id="modalVerDetalles" tabindex="-1" role="dialog" aria-labelledby="modalVerDetalles" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #069206;">
+      <div class="modal-header" style="background: #0e2e0e ;">
         <h5 class="modal-title" id="newEditorialModal"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Descripcion del PDF </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -337,10 +327,11 @@ progress[value] {
 
 <!--MODAL PARA ver pdf-->
 
-<div class="modal fade" id="modalVerPdf" tabindex="-1" role="dialog" aria-labelledby="modalVerPdf" aria-hidden="true">
+<div class="modal fade" data-backdrop="static" 
+  data-keyboard="false" id="modalVerPdf" tabindex="-1" role="dialog" aria-labelledby="modalVerPdf" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #069206;">
+      <div class="modal-header" style="background: #0e2e0e ;">
         <h5 class="modal-title" id="newmodalVerPdf"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Leer PDF </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -379,8 +370,8 @@ progress[value] {
 <div class="modal fade" id="fotografiaModal" tabindex="-1" role="dialog" aria-labelledby="fotografiaModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #D5D9DF;">
-        <h5 class="modal-title" id="newEditorialModalTittle"><img src="img/icons/BookCover.png" width="30" height="30"> Agregar una portada</h5>
+      <div class="modal-header" style="background: #0e2e0e ;">
+        <h5 class="modal-title" id="newEditorialModalTittle"><img src="img/icons/BookCover.png" width="30" height="30"><a style="color:white;"> Agregar una portada </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -427,8 +418,8 @@ progress[value] {
 <div class="modal fade" id="modalEliminarpdf" tabindex="-1" role="dialog" aria-labelledby="modalEliminarpdf" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="background: #D5D9DF;">
-        <h5 class="modal-title" id="newEditorialModalTittle"><img src="img/icons/BookEditWideDel.png" width="35" height="30"> Eliminar</h5>
+      <div class="modal-header" style="background: #0e2e0e ;">
+        <h5 class="modal-title" id="newEditorialModalTittle"><img src="img/icons/BookEditWideDel.png" width="35" height="30"><a style="color:white;"> Eliminar </a></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -461,6 +452,10 @@ progress[value] {
   </div>
 </div>
 
+ 
+
+
+</html>
 
 <script type="text/javascript">
 
@@ -503,10 +498,13 @@ function uploadFile(){
   ajax.addEventListener("abort", abortHandler, false);
   ajax.open("POST", "upload4.php");
   ajax.send(formdata);
+
   $("#file1").val('');
   document.getElementById("formdocutit").value='';
-  document.getElementById("formdocutag").value='';
+ $('#formdocutag').tagsInput().value="";
   document.getElementById("formdocudes").value='';
+
+  
 }
 function progressHandler(event){
   _("peso_cargado").innerHTML = "Subiendo "+event.loaded+" bytes de "+event.total;
@@ -519,25 +517,24 @@ function completeHandler(event){
   _("barradeprogreso").value = 0;
 }
 function errorHandler(event){
-  _("estado").innerHTML = "Upload Failed";
+  _("estado").innerHTML = "Publicacion fallida";
 }
 function abortHandler(event){
-  _("estado").innerHTML = "Upload Aborted";
+  _("estado").innerHTML = "Publicacion abordatada";
 }
 }
 
 </script>
 
 
+
 <!--Script para recargar tabla al abrir esta pagina el scrip esta incluido en <top.php> dir src/js/tables/loader.js-->
 <script>
     window.onload = function () {     
         
-      recargarTabla();
-     
+      recargarTabla();     
 
-
-       $('.block-tab').on('keydown', function(e) { 
+$('.block-tab').on('keydown', function(e) { 
       if (e.keyCode == 9) e.preventDefault(); 
       });
            $('#formdocutag').tagsInput({      
@@ -546,6 +543,12 @@ function abortHandler(event){
               'width':'350px',
               'placeholderColor' : '#003764'
             });
+function goBack(){
+
+  window.location = "buscarMenu.php";
+
+}
+       
       
       $(window).keydown(function(event){
         if(event.keyCode == 13) {
@@ -746,5 +749,14 @@ function eliminarpdf(){
       
       
     })
+
+ $('#modalsubirpdf').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // 
+            
+       var modal = $(this) 
+     
+       
+      
+    })    
 
 </script>
