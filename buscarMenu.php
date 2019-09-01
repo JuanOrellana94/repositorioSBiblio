@@ -72,7 +72,7 @@ progress[value] {
           </div>
            </a> 
           <div style="vertical-align: middle; margin: 5px; color:white">
-               <p class="font-weight-light"> <h3> Repositorio de documentos</h3></p>       
+               <p class="font-weight-light"> <h3>Biblioteca virtual</h3></p>       
           </div>  
                              
         </nav>
