@@ -154,7 +154,7 @@ body {
       });
 </script>
 
-     <table class="table table-hover table-responsive" align="left">
+     <table class="table table-responsive" align="left">
     <?php      
             $selTable=mysqli_query($conexion,"SELECT * from tbl_documentos where titulo like '%$textBusqueda%' OR tagdocumento LIKE '%$textBusqueda%'
                 ORDER BY id_documento
