@@ -208,29 +208,8 @@ progress[value] {
   
 <div class="container-fluid" > 
  <!--     -->
-        <!--Cuerpo del panel--> 
+        <!--Cuerpo del panel-->
 
-        <div class="card-body">              
-          <div class="row">            
-            <div class="col-md-12">
-              <div class="card">
-              <div class="card-body"> 
-                 <!--   -->            
-                        <td height="50"><div class="col-sm-0">  
-                          <div class="card">   
-                          <div class="card-header">
-                          <div class="row mx-auto">
-                             <div style="vertical-align: middle; margin: 5px">
-                          <p class="font-weight-light"> <h3>  Catalogo de Archivos</h3>  Descarga de documentos</p>       
-                             </div>           
-                            </div>
-
-                         </div>
-
-                       </tr>
-              
-              </div>
-              <div class="card-header">
 
           <div class="row" style="margin-top: 10px">
          
@@ -247,7 +226,7 @@ progress[value] {
                       <button class="btn btn-outline-info" type="button" onclick="recargarTabla()"> Buscar </button>
                     </div> 
                   </div>
-                  <small id="dateHelp" class="form-text text-muted">Categorias</small>
+                  <small id="dateHelp" class="form-text text-muted">Buscar arvhios por nombre o categorias</small>
                 </form>
               </div>                       
             </div>
@@ -272,9 +251,7 @@ progress[value] {
           </div>
              
         </div>
-            </div>
-          </div>  
-        </div>
+      
         <div align="center" name="cargarTabla" id="cargarTabla">
          
          <!--Fin delcuerpo del panel-->
