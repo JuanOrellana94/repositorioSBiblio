@@ -78,7 +78,7 @@ body {
            <?php
              
             
-           $filas_resultado=mysqli_query($conexion,"SELECT count(id_documento) from tbl_documentos where titulo like '%$textBusqueda%' OR tagdocumento LIKE '%$textBusqueda%'
+           $filas_resultado=mysqli_query($conexion,"SELECT count(id_documento) from tbl_documentos where titulo like '%$textBusqueda%' OR tagdocumento LIKE '%$textBusqueda%' ORDER by id_documento DESC
 
             ");
         
@@ -157,7 +157,7 @@ body {
      <table class="table table-responsive" align="left">
     <?php      
             $selTable=mysqli_query($conexion,"SELECT * from tbl_documentos where titulo like '%$textBusqueda%' OR tagdocumento LIKE '%$textBusqueda%'
-                ORDER BY id_documento
+                ORDER BY id_documento DESC
                 LIMIT $inicia_desde, $limite;");          
            if (mysqli_num_rows($selTable)==0){
                echo "<div id='respuesta' style='color: red; font-weight: bold; text-align: center;'>  
