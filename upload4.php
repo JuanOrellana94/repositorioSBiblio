@@ -13,8 +13,8 @@ $fileTmpLoc = $_FILES["file1"]["tmp_name"]; // File in the PHP tmp folder
 $fileType = $_FILES["file1"]["type"]; // The type of file it is
 $fileSize = $_FILES["file1"]["size"]; // File size in bytes
 $fileErrorMsg = $_FILES["file1"]["error"]; // 0 for false... and 1 for true
-$destino = "upload/" . $fileName;
 $titulo=$_POST['titulo'];
+$destino = "upload/" . $titulo;
 $criterio=$_POST['criterio'];
 $descripcion=$_POST['descripcion'];
 echo "<br>";
@@ -23,7 +23,7 @@ if (!$fileTmpLoc) { // if file not chosen
     echo "ERROR: porfavor seleccione el archivo pdf";
     exit();
 }
-if(move_uploaded_file($fileTmpLoc, "upload/$fileName")){
+if(move_uploaded_file($fileTmpLoc, "upload/$titulo")){
 
  
        
@@ -45,7 +45,7 @@ if(move_uploaded_file($fileTmpLoc, "upload/$fileName")){
     $conexion->set_charset("utf8");
     
          
-    $insRegistro=mysqli_query($conexion,"INSERT INTO tbl_documentos(titulo,descripcion,tamanio,tipo,nombre_archivo,tagdocumento) VALUES('$titulo','$descripcion','$fileSize bytes','$destino','$fileName','$criterio');")
+    $insRegistro=mysqli_query($conexion,"INSERT INTO tbl_documentos(titulo,descripcion,tamanio,tipo,nombre_archivo,tagdocumento) VALUES('$titulo','$descripcion','$fileSize bytes','$destino','$titulo','$criterio');")
             or die ('ERROR INS-INS:'.mysqli_error($conexion));           
 }else{
 
@@ -61,6 +61,6 @@ if(move_uploaded_file($fileTmpLoc, "upload/$fileName")){
 }
 }else{
     echo "el archivo subido no es pdf, se eliminara del servidor";
-    array_map('unlink', glob("upload/$fileName")); 
+    array_map('unlink', glob("upload/$titulo")); 
 }
 ?>

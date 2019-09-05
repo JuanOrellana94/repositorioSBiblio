@@ -181,7 +181,7 @@ body {
                  </div>
                   <div class="flip-card-back">
                      <h1>Descripción</h1> 
-                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
+                     <h5><p><?php echo substr($dataLibros['descripcion'], 0, 135)."". "...";?></p></h5>
 
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
@@ -250,7 +250,7 @@ body {
                  </div>
                   <div class="flip-card-back">
                      <h1>Descripción</h1> 
-                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
+                     <h5><p><?php echo substr($dataLibros['descripcion'], 0, 135)."". "...";?></p></h5>
 
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
@@ -310,7 +310,7 @@ body {
                  </div>
                   <div class="flip-card-back">
                      <h1>Descripción</h1> 
-                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
+                     <h5><p><?php echo substr($dataLibros['descripcion'], 0, 135)."". "...";?></p></h5>
 
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
@@ -371,7 +371,7 @@ body {
                  </div>
                   <div class="flip-card-back">
                      <h1>Descripción</h1> 
-                     <h5><p><?php echo $dataLibros['descripcion'];?></p></h5>
+                     <h5><p><?php echo substr($dataLibros['descripcion'], 0, 135)."". "...";?></p></h5>
                    
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">

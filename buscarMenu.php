@@ -140,7 +140,8 @@ progress[value] {
 
 
 
-<div class="modal fade" id="modalsubirpdf" tabindex="-1" role="dialog" aria-labelledby="modalsubirpdf" aria-hidden="true">
+<div class="modal fade" data-backdrop="static" 
+  data-keyboard="false" id="modalsubirpdf" tabindex="-1" role="dialog" aria-labelledby="modalsubirpdf" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background: #2980b9 ;"> 
