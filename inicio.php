@@ -81,7 +81,7 @@
                         <button type="button" class="btn btnAccess" onclick="checkUser()" name="entryCheck">Ingresar</button>
                   </div>
                   <div class="col-sm-6">
-                          <button type="button" class="btn btnAccess" onclick="goBack()" name="goBack">Volver</button>
+                          <button type="button" class="btn btnAccess"  onclick="goBack()"  style="background-color:#ff3333"  name="goBack">Volver</button>
                   </div>
                 </div>
 
