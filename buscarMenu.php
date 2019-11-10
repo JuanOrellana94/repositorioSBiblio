@@ -343,6 +343,47 @@ progress[value] {
     </div>
   </div>
 </div>
+<!--MODAL PARA Det pdf-->
+
+<div class="modal fade" data-backdrop="static" 
+  data-keyboard="false" id="modalDetPdf" tabindex="-1" role="dialog" aria-labelledby="modalDetPdf" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background: #2980b9 ;">
+        <h5 class="modal-title" id="newmodalDetPdf"><img src="img/portadapdf/defaultpdf.jpg" width="30" height="30"> &nbsp;<a style="color:white";>Descripcion del PDF </a></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background: #D5D9DF;">
+        <form id="formEditEditorial" name="formEditEditorial">
+          <div class="row">
+           
+            <div class="col-sm-10">
+
+                                      
+                       <div id="cargarPDFdet"></div>                                    
+                      
+                 
+             
+            </div>
+         
+           </div>          
+            
+        </form>
+
+      </div>
+      <div class="modal-footer" style="background: #D5D9DF;">
+         <div id="respuestaEditarEditorial" style="color: red; font-weight: bold; text-align: center;"></div>
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
+
 <!--MODAL PARA SUBIR PORTADA DEL pdf-->
 
 <div class="modal fade" id="fotografiaModal" tabindex="-1" role="dialog" aria-labelledby="fotografiaModal" aria-hidden="true">
@@ -594,12 +635,22 @@ $('#modalVerPdf').on('show.bs.modal', function (event) {
        var modal = $(this) 
        
        $("#cargarPDF").load("archivo.php?id="+varformdocumentoid);
+      
+    })
+//Ver pdf detalle
+
+$('#modalDetPdf').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // 
+
+       var detformdocumentoid  = button.data('detformdocumentoid')
+       var modal = $(this) 
+       
+       $("#cargarPDFdet").load("detalle.php?id="+detformdocumentoid);
   
      
        
       
     })
-
 
 // SUBIR PORTADA
 

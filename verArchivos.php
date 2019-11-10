@@ -186,11 +186,17 @@ body {
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
+                                 data-target="#modalDetPdf" 
+                                 data-detformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
+                                 title="Detalle del Documento">
+                                    <img  src="img/icons/entrega.png" width="20" height="20"><p>Leer descripción</p>
+                                </button>
+                                <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
                                  title="Mostrar Documento">
                                     <img  src="img/icons/instruccion.png" width="20" height="20"><p>Leer documento</p>
-                                </button> 
+                                </button>  
 
                                 </div>
                                
@@ -255,6 +261,12 @@ body {
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
                                 <button type="button" class="btn btn-light" data-toggle="modal"
+                                 data-target="#modalDetPdf" 
+                                 data-detformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
+                                 title="Detalle del Documento">
+                                    <img  src="img/icons/entrega.png" width="20" height="20"><p>Leer descripción</p>
+                                </button>
+                                <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
                                  title="Mostrar Documento">
@@ -314,6 +326,12 @@ body {
 
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
+                                 <button type="button" class="btn btn-light" data-toggle="modal"
+                                 data-target="#modalDetPdf" 
+                                 data-detformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
+                                 title="Detalle del Documento">
+                                    <img  src="img/icons/entrega.png" width="20" height="20"><p>Leer descripción</p>
+                                </button>
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
@@ -375,6 +393,12 @@ body {
                    
             <div align="center">
                 <div class="btn-group" role="group" aria-label="Opciones">
+                                 <button type="button" class="btn btn-light" data-toggle="modal"
+                                 data-target="#modalDetPdf" 
+                                 data-detformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
+                                 title="Detalle del Documento">
+                                    <img  src="img/icons/entrega.png" width="20" height="20"><p>Leer descripción</p>
+                                </button>
                                 <button type="button" class="btn btn-light" data-toggle="modal"
                                  data-target="#modalVerPdf" 
                                  data-varformdocumentoid="<?php echo $dataLibros['id_documento'];?>"                                 
